@@ -1,2 +1,28 @@
-# supply-chain-loss-drivers
-SQL &amp; Power BI Profitability Audit. Analyzing $1.1M in revenue leakage to distinguish Fraud from Operational Costs. // Auditoría de Rentabilidad. Análisis de 1.1M en pérdidas para distinguir Fraude de Costes Operativos.
+# 📉 Supply Chain Profitability Audit: Loss Drivers
+
+**Project Status:** Completed  
+**Tools:** PostgreSQL, SQL (CTEs, Views), Power BI, Python (Data Quality Check)
+
+### 🎯 Objective
+To identify the root causes of negative profitability in the supply chain. The initial hypothesis suggested "Fraud" as the main driver, but data analysis was required to confirm this.
+
+### 🔍 Key Findings (The Truth)
+After auditing **1.1 Million (CHF)** in revenue leakage (losses):
+1.  **Operational Costs are the main issue:** 80% of losses come from legitimate customers with structural logistics costs (shipping/product costs > revenue), NOT fraud.
+2.  **Fraud is minor:** "Suspected Fraud" accounts for less than 5% of total losses.
+3.  **Action Plan:** Stop blaming customers. Renegotiate shipping rates and product margins for the "Structural Loss" segment.
+
+### 📊 Dashboard Preview
+![Dashboard Preview](reports/loss_drivers.png)
+*(Note: If the image above doesn't load, check that your file is named exactly 'loss_drivers.png' inside the 'reports' folder)*
+
+📄 **[View Full PDF Report](reports/loss_drivers.pdf)**
+
+### 🛠️ Technical Process
+1.  **Data Cleaning:** Identified synthetic/homogenous data patterns in early stages.
+2.  **SQL Logic:** * Created `vw_loss_drivers` using CTEs to segment customers.
+    * Logic: `CASE WHEN` to categorize users into Fraud, Excessive Returns, or Structural Loss.
+3.  **Visualization:** Power BI dashboard focusing on "Revenue Leakage" rather than potential profit.
+
+---
+*Report by Marina Cancela | Data Source: DataCo Supply Chain Dataset*
