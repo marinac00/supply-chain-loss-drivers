@@ -20,8 +20,8 @@ After auditing **1.1 Million (CHF)** in revenue leakage (losses):
 
 ### 🛠️ Technical Process
 1.  **Data Cleaning:** Identified synthetic/homogenous data patterns in early stages.
-2.  **SQL Logic:** * Created `vw_loss_drivers` using CTEs to segment customers.
-    * Logic: `CASE WHEN` to categorize users into Fraud, Excessive Returns, or Structural Loss.
+2.  **SQL Logic:** * Created `vw_loss_drivers` using CTEs to isolate **Internal Revenue Leakage** from External Fraud.
+    * Logic: `CASE WHEN` to classify losses into Operational/Structural (Internal) vs. Suspicious Activity (External).
 3.  **Visualization:** Power BI dashboard focusing on "Revenue Leakage" rather than potential profit.
 
 ---
